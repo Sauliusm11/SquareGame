@@ -354,6 +354,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3473c70b615a3c74c8a5db08f9ceea18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EmptySquare: {fileID: 11400000, guid: b07160a439e82494ea560ecf0014ac9d, type: 2}
+  RedSquare: {fileID: 11400000, guid: 19a9b5b96cecf754286721629570ac78, type: 2}
+  TriangleUp: {fileID: 11400000, guid: 28225fdfc00769d43a2a67f7ea10860f, type: 2}
+  Hexagon: {fileID: 11400000, guid: 3df3ea430dd889045807ae70d415e8b9, type: 2}
+  SimpleDot: {fileID: 11400000, guid: a004f7647af01cf4bac38a5adb6bdac7, type: 2}
+  Pillar: {fileID: 11400000, guid: 7404b983dee804b42bb5b10a3ba9f69c, type: 2}
+  Star: {fileID: 11400000, guid: f9f4723040726e649b74b6775b60e9a1, type: 2}
+  DiagonalArrowRight: {fileID: 11400000, guid: 71ab8fb7a92578847b9458872e61f323, type: 2}
+  Cross: {fileID: 11400000, guid: ee8ae43a078d8a04e95d38eef82eba68, type: 2}
+  SpikeBall: {fileID: 11400000, guid: d75b2404e54ee0d4f919adfbf684418d, type: 2}
+  QuestionMark: {fileID: 11400000, guid: b75d8f8f90d036b4696c255f494fc876, type: 2}
+  EmptySquareLocked: {fileID: 11400000, guid: ebedae5ffc2555b4ea8470e6f8c3beaa, type: 2}
+  RedSquareLocked: {fileID: 11400000, guid: 67dcf82ce08f7ae4786fb15e1f1bb616, type: 2}
+  TriangleUpLocked: {fileID: 11400000, guid: 526b2fb3877b4404d875061e78f74ee1, type: 2}
+  HexagonLocked: {fileID: 11400000, guid: 8ad23a2c4dbd4354680cbe222fea82e0, type: 2}
+  SimpleDotLocked: {fileID: 11400000, guid: 0cf3751d33949eb4db0725efc7ea4fe7, type: 2}
+  PillarLocked: {fileID: 11400000, guid: 462d453f87f07714fb56d63b87f10a55, type: 2}
+  StarLocked: {fileID: 11400000, guid: dc9b40f0ce2de024cb7e8aeb33ffbc45, type: 2}
+  DiagonalArrowRightLocked: {fileID: 11400000, guid: 4dc00b2baa9605242a564967729f16cc, type: 2}
+  CrossLocked: {fileID: 11400000, guid: 8fad8f9d757f2eb42807b4ae2f5726f7, type: 2}
+  SpikeBallLocked: {fileID: 11400000, guid: c73c17230a1c02d4b8ec9aec7e7228f9, type: 2}
+  QuestionMarkLocked: {fileID: 11400000, guid: a15113d227ca69247982ed1ac35523d1, type: 2}
+  Removal: {fileID: 0}
 --- !u!4 &496354683
 Transform:
   m_ObjectHideFlags: 0
@@ -704,7 +727,6 @@ GameObject:
   - component: {fileID: 1512274912}
   - component: {fileID: 1512274914}
   - component: {fileID: 1512274913}
-  - component: {fileID: 1512274915}
   - component: {fileID: 1512274916}
   m_Layer: 0
   m_Name: Tilemap
@@ -786,6 +808,16 @@ Tilemap:
   m_GameObject: {fileID: 1512274911}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: 4, y: -5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 17
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -2, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -1042,7 +1074,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: f9f4723040726e649b74b6775b60e9a1, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: dc9b40f0ce2de024cb7e8aeb33ffbc45, type: 2}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 7404b983dee804b42bb5b10a3ba9f69c, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 462d453f87f07714fb56d63b87f10a55, type: 2}
@@ -1087,7 +1119,7 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: aeb2a9fb74b04dd4088b22a620dde1d1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 462d2261b1fa1bb4f84d8a7811fbbd61, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 811572a21d1dc0942a0492ac004b0b3b, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 12fe1cee78ee4d14286b0f0ffe4476f2, type: 3}
@@ -1098,7 +1130,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 2529aeea4f9d4494fa285231def5baea, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 22
+  - m_RefCount: 23
     m_Data:
       e00: 1
       e01: 0
@@ -1117,13 +1149,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 22
+  - m_RefCount: 23
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -5, y: -4, z: 0}
-  m_Size: {x: 9, y: 7, z: 1}
+  m_Origin: {x: -5, y: -5, z: 0}
+  m_Size: {x: 10, y: 8, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -1143,18 +1175,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1512274915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1512274911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e97c611308c1c1240af1f5a96a11964a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!19719996 &1512274916
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -1316,6 +1336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1728898351}
   - component: {fileID: 1728898350}
+  - component: {fileID: 1728898353}
   - component: {fileID: 1728898352}
   m_Layer: 0
   m_Name: Grid
@@ -1343,7 +1364,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728898349}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1364,6 +1385,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97c611308c1c1240af1f5a96a11964a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1728898353
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728898349}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100}
+  m_EdgeRadius: 0
 --- !u!1 &1798128650
 GameObject:
   m_ObjectHideFlags: 0

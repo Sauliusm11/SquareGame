@@ -8,11 +8,13 @@ public class TilePlacement : MonoBehaviour, IPointerClickHandler
 {
     Tilemap tilemap;
     GameManager manager;
+    SelectionHandler selectionHandler;
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        tilemap = gameObject.GetComponent<Tilemap>();
+        selectionHandler = GameObject.Find("SelectionManager").GetComponent<SelectionHandler>();
+        tilemap = gameObject.GetComponentInChildren<Tilemap>();
     }
 
     // Update is called once per frame
@@ -22,8 +24,10 @@ public class TilePlacement : MonoBehaviour, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(manager.GetSelectedSquare());
-        Debug.Log(tilemap.GetTile(tilemap.WorldToCell(eventData.pointerPressRaycast.worldPosition)));
-        Debug.Log("Hi");
+        Debug.Log(eventData.pointerPressRaycast.worldPosition);
+        Vector3Int cellPosition = tilemap.WorldToCell(eventData.pointerPressRaycast.worldPosition);
+        Tile tile = selectionHandler.GetTileFromSelection(manager.GetSelectedSquare());
+        tilemap.SetTile(cellPosition, tile);
+        Debug.Log(cellPosition);
     }
 }

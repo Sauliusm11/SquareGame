@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
         EmptySquareLocked, RedSquareLocked, TriangleUpLocked, HexagonLocked, SimpleDotLocked, PillarLocked,
         StarLocked, DiagonalArrowRightLocked, CrossLocked, SpikeBallLocked, QuestionMarkLocked, Removal
     };
-    public static Selected selectedSquare;
+    private static Selected selectedSquare;
 
     // Start is called before the first frame update
     void Start()
