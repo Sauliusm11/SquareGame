@@ -66,7 +66,70 @@ public class SelectionHandler : MonoBehaviour
         
     }
 
-
+    public void SelectEmpty()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.EmptySquare);
+    }
+    public void SelectEmptyLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.EmptySquareLocked);
+    }
+    public void SelectRedSquare()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.RedSquare);
+    }
+    public void SelectRedSquareLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.RedSquareLocked);
+    }
+    public void SelectTriangleUp()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.TriangleUp);
+    }
+    public void SelectTriangleUpLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.TriangleUpLocked);
+    }
+    public void SelectHexagon()
+    { 
+        manager.SetSelectedSquare(GameManager.Selected.Hexagon);
+    }
+    public void SelectHexagonLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.HexagonLocked);
+    }
+    public void SelectSimpleDot()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.SimpleDot);
+    }
+    public void SelectSimpleDotLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.SimpleDotLocked);
+    }
+    public void SelectPillar()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.Pillar);
+    }
+    public void SelectPillarLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.PillarLocked);
+    }
+    public void SelectStar()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.Star);
+    }
+    public void SelectStarLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.StarLocked);
+    }
+    public void SelectDiagonalArrowRight()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.DiagonalArrowRight);
+    }
+    public void SelectDiagonalArrowRightLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.DiagonalArrowRightLocked);
+    }
     public void SelectCross()
     {
         manager.SetSelectedSquare(GameManager.Selected.Cross);
@@ -75,6 +138,27 @@ public class SelectionHandler : MonoBehaviour
     {
         manager.SetSelectedSquare(GameManager.Selected.CrossLocked);
     }
+    public void SelectSpikeBall()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.SpikeBall);
+    }
+    public void SelectSpikeBallLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.SpikeBallLocked);
+    }
+    public void SelectQuestionMark()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.QuestionMark);
+    }
+    public void SelectQuestionMarkLocked()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.QuestionMarkLocked);
+    }
+    public void SelectRemoval()
+    {
+        manager.SetSelectedSquare(GameManager.Selected.Removal);
+    }
+
     public Tile GetTileFromSelection(GameManager.Selected selection)
     {
         switch (selection)
