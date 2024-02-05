@@ -24,7 +24,8 @@ public class TilePlacement : MonoBehaviour, IDragHandler, IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        PlaceTile(eventData.pointerCurrentRaycast.worldPosition);
+        if(manager.GetSelectedSquare() != GameManager.Selected.Camera)
+            PlaceTile(eventData.pointerCurrentRaycast.worldPosition);
     }
     public void PlaceTile(Vector3 position)
     {        
@@ -56,6 +57,7 @@ public class TilePlacement : MonoBehaviour, IDragHandler, IPointerClickHandler
     }
     public void OnDrag(PointerEventData eventData)
     {
-        PlaceTile(eventData.pointerCurrentRaycast.worldPosition);
+        if (manager.GetSelectedSquare() != GameManager.Selected.Camera)
+            PlaceTile(eventData.pointerCurrentRaycast.worldPosition);
     }
 }
