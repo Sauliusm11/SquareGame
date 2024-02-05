@@ -35,7 +35,6 @@ public class TilePlacement : MonoBehaviour, IDragHandler
             if (curRaysastResult.gameObject.layer == 5)//5 is UI value
             {
                 overUI = true;
-                Debug.Log("YES");
                 break;
             }
         }
@@ -56,7 +55,6 @@ public class TilePlacement : MonoBehaviour, IDragHandler
             if (curRaysastResult.gameObject.layer == 5)//5 is UI value
             {
                 overUI = true;
-                Debug.Log(curRaysastResult.gameObject.name); 
                 break;
             }
         }
@@ -70,7 +68,6 @@ public class TilePlacement : MonoBehaviour, IDragHandler
     }
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Drag");
         PlaceTile(eventData.pointerCurrentRaycast.worldPosition);
     }
 }
