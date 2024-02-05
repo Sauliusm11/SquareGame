@@ -48,4 +48,9 @@ public class SelectionHandler : MonoBehaviour
         //Removal
         return null;
     }
+
+    public List<Tile> GetTileList()
+    {
+        return Tiles;
+    }
 }
