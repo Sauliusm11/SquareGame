@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System.IO;
-
+using TMPro;
 
 public class LevelHandler : MonoBehaviour
 {
@@ -16,10 +16,20 @@ public class LevelHandler : MonoBehaviour
     Tilemap tilemap;
     SelectionHandler selectionHandler;
     List<Tile> Tiles;
+    [SerializeField]
+    GameObject loadLevelName;
+    [SerializeField]
+    GameObject saveLevelName;
+    [SerializeField]
+    TMP_InputField loadInput;
+    [SerializeField]
+    TMP_InputField saveInput;
 
     // Start is called before the first frame update
     void Start()
     {
+        loadLevelName.SetActive(false);
+        saveLevelName.SetActive(false);
         tilemap = GameObject.Find("Grid").GetComponentInChildren<Tilemap>();
         selectionHandler = GameObject.Find("SelectionManager").GetComponent<SelectionHandler>();
     }
@@ -32,8 +42,8 @@ public class LevelHandler : MonoBehaviour
 
     public void LoadTiles()
     {
-        //Change to a prompt asking for file name
-        string filename = "Save.json";
+        string filename = loadInput.text+".json";
+        loadLevelName.SetActive(false);
         string jsonData = File.ReadAllText(Application.dataPath + "/Levels/" + filename);
         SavedTiles savedTiles = JsonUtility.FromJson<SavedTiles>(jsonData);
 
@@ -89,22 +99,35 @@ public class LevelHandler : MonoBehaviour
                 savedTiles.y.Add(y + bounds.position.y);
                 if (tile != null)
                 {
-                    //Debug.Log("x:" + x + " y:" + y + " tile:" + tile.name);
                     savedTiles.Name.Add(tile.name);
                 }
                 else
                 {
-                    //Debug.Log("x:" + x + " y:" + y + " tile: (null)");
                     savedTiles.Name.Add("empty");
                 }
-
             }
         }
         string jsonData = JsonUtility.ToJson(savedTiles);
-        //Figure out location and writing
-        //Change to a prompt asking for file name
-        string filename = "Save.json";
-        //Debug.Log(Application.dataPath + "/Levels/" + filename);
+        string filename = saveInput.text + ".json";
+        saveLevelName.SetActive(false);
         File.WriteAllText(Application.dataPath + "/Levels/" + filename, jsonData);
+    }
+    public void StartSave()
+    {
+        saveLevelName.SetActive(true);
+    }
+    public void StartLoad()
+    {
+        loadLevelName.SetActive(true);
+    }
+
+    //These are not used outside of buttons because of unclear naming scheme
+    public void CancelSave()
+    {
+        saveLevelName.SetActive(true);
+    }
+    public void CancelLoad()
+    {
+        loadLevelName.SetActive(true);
     }
 }
