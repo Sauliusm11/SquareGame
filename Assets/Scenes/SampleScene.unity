@@ -123,6 +123,143 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &4014807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4014808}
+  - component: {fileID: 4014810}
+  - component: {fileID: 4014809}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4014808
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2128549118}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &4014809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Save Level
+
+'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &4014810
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4014807}
+  m_CullTransparentMesh: 1
 --- !u!1 &149836753
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +273,7 @@ GameObject:
   - component: {fileID: 149836756}
   - component: {fileID: 149836755}
   m_Layer: 5
-  m_Name: EmptyButton
+  m_Name: SelectEmptySquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,7 +345,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectEmpty
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -269,7 +406,7 @@ GameObject:
   - component: {fileID: 290917424}
   - component: {fileID: 290917423}
   m_Layer: 5
-  m_Name: RemoveButton
+  m_Name: SelectRemoval
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +478,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectRemoval
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -402,7 +539,7 @@ GameObject:
   - component: {fileID: 314301838}
   - component: {fileID: 314301837}
   m_Layer: 5
-  m_Name: SImpleDotButtonLocked
+  m_Name: SelectSimpleDotLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,7 +611,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectSimpleDotLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -557,6 +694,8 @@ RectTransform:
   - {fileID: 653176030}
   - {fileID: 1951060345}
   - {fileID: 290917422}
+  - {fileID: 2128549118}
+  - {fileID: 1457142625}
   m_Father: {fileID: 1026873826}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -684,7 +823,7 @@ GameObject:
   - component: {fileID: 370653464}
   - component: {fileID: 370653463}
   m_Layer: 5
-  m_Name: SimpleDotButton
+  m_Name: SelectSimpleDot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -756,7 +895,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectSimpleDot
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -817,7 +956,7 @@ GameObject:
   - component: {fileID: 454952489}
   - component: {fileID: 454952488}
   m_Layer: 5
-  m_Name: StarButtonLocked
+  m_Name: SelectStarLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -889,7 +1028,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectStarLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -950,7 +1089,7 @@ GameObject:
   - component: {fileID: 488256963}
   - component: {fileID: 488256962}
   m_Layer: 5
-  m_Name: RedSquareLocked
+  m_Name: SelectRedSquareLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1022,7 +1161,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectRedSquareLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1083,7 +1222,7 @@ GameObject:
   - component: {fileID: 494876093}
   - component: {fileID: 494876092}
   m_Layer: 5
-  m_Name: CrossButton
+  m_Name: SelectCross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1155,7 +1294,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectCross
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1232,29 +1371,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3473c70b615a3c74c8a5db08f9ceea18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EmptySquare: {fileID: 11400000, guid: b07160a439e82494ea560ecf0014ac9d, type: 2}
-  RedSquare: {fileID: 11400000, guid: 19a9b5b96cecf754286721629570ac78, type: 2}
-  TriangleUp: {fileID: 11400000, guid: 28225fdfc00769d43a2a67f7ea10860f, type: 2}
-  Hexagon: {fileID: 11400000, guid: 3df3ea430dd889045807ae70d415e8b9, type: 2}
-  SimpleDot: {fileID: 11400000, guid: a004f7647af01cf4bac38a5adb6bdac7, type: 2}
-  Pillar: {fileID: 11400000, guid: 7404b983dee804b42bb5b10a3ba9f69c, type: 2}
-  Star: {fileID: 11400000, guid: f9f4723040726e649b74b6775b60e9a1, type: 2}
-  DiagonalArrowRight: {fileID: 11400000, guid: 71ab8fb7a92578847b9458872e61f323, type: 2}
-  Cross: {fileID: 11400000, guid: ee8ae43a078d8a04e95d38eef82eba68, type: 2}
-  SpikeBall: {fileID: 11400000, guid: d75b2404e54ee0d4f919adfbf684418d, type: 2}
-  QuestionMark: {fileID: 11400000, guid: b75d8f8f90d036b4696c255f494fc876, type: 2}
-  EmptySquareLocked: {fileID: 11400000, guid: ebedae5ffc2555b4ea8470e6f8c3beaa, type: 2}
-  RedSquareLocked: {fileID: 11400000, guid: 67dcf82ce08f7ae4786fb15e1f1bb616, type: 2}
-  TriangleUpLocked: {fileID: 11400000, guid: 526b2fb3877b4404d875061e78f74ee1, type: 2}
-  HexagonLocked: {fileID: 11400000, guid: 8ad23a2c4dbd4354680cbe222fea82e0, type: 2}
-  SimpleDotLocked: {fileID: 11400000, guid: 0cf3751d33949eb4db0725efc7ea4fe7, type: 2}
-  PillarLocked: {fileID: 11400000, guid: 462d453f87f07714fb56d63b87f10a55, type: 2}
-  StarLocked: {fileID: 11400000, guid: dc9b40f0ce2de024cb7e8aeb33ffbc45, type: 2}
-  DiagonalArrowRightLocked: {fileID: 11400000, guid: 4dc00b2baa9605242a564967729f16cc, type: 2}
-  CrossLocked: {fileID: 11400000, guid: 8fad8f9d757f2eb42807b4ae2f5726f7, type: 2}
-  SpikeBallLocked: {fileID: 11400000, guid: c73c17230a1c02d4b8ec9aec7e7228f9, type: 2}
-  QuestionMarkLocked: {fileID: 11400000, guid: a15113d227ca69247982ed1ac35523d1, type: 2}
-  Removal: {fileID: 0}
+  Tiles:
+  - {fileID: 11400000, guid: b07160a439e82494ea560ecf0014ac9d, type: 2}
+  - {fileID: 11400000, guid: 19a9b5b96cecf754286721629570ac78, type: 2}
+  - {fileID: 11400000, guid: 28225fdfc00769d43a2a67f7ea10860f, type: 2}
+  - {fileID: 11400000, guid: 3df3ea430dd889045807ae70d415e8b9, type: 2}
+  - {fileID: 11400000, guid: a004f7647af01cf4bac38a5adb6bdac7, type: 2}
+  - {fileID: 11400000, guid: 7404b983dee804b42bb5b10a3ba9f69c, type: 2}
+  - {fileID: 11400000, guid: f9f4723040726e649b74b6775b60e9a1, type: 2}
+  - {fileID: 11400000, guid: 71ab8fb7a92578847b9458872e61f323, type: 2}
+  - {fileID: 11400000, guid: ee8ae43a078d8a04e95d38eef82eba68, type: 2}
+  - {fileID: 11400000, guid: d75b2404e54ee0d4f919adfbf684418d, type: 2}
+  - {fileID: 11400000, guid: b75d8f8f90d036b4696c255f494fc876, type: 2}
+  - {fileID: 11400000, guid: b07160a439e82494ea560ecf0014ac9d, type: 2}
+  - {fileID: 11400000, guid: 67dcf82ce08f7ae4786fb15e1f1bb616, type: 2}
+  - {fileID: 11400000, guid: 526b2fb3877b4404d875061e78f74ee1, type: 2}
+  - {fileID: 11400000, guid: 8ad23a2c4dbd4354680cbe222fea82e0, type: 2}
+  - {fileID: 11400000, guid: 0cf3751d33949eb4db0725efc7ea4fe7, type: 2}
+  - {fileID: 11400000, guid: 462d453f87f07714fb56d63b87f10a55, type: 2}
+  - {fileID: 11400000, guid: dc9b40f0ce2de024cb7e8aeb33ffbc45, type: 2}
+  - {fileID: 11400000, guid: 4dc00b2baa9605242a564967729f16cc, type: 2}
+  - {fileID: 11400000, guid: 8fad8f9d757f2eb42807b4ae2f5726f7, type: 2}
+  - {fileID: 11400000, guid: c73c17230a1c02d4b8ec9aec7e7228f9, type: 2}
+  - {fileID: 11400000, guid: a15113d227ca69247982ed1ac35523d1, type: 2}
 --- !u!4 &496354683
 Transform:
   m_ObjectHideFlags: 0
@@ -1307,7 +1446,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1384,7 +1523,7 @@ GameObject:
   - component: {fileID: 653176032}
   - component: {fileID: 653176031}
   m_Layer: 5
-  m_Name: QuestionMarkButton
+  m_Name: SelectQuestionMark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1456,7 +1595,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectQuestionMark
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1517,7 +1656,7 @@ GameObject:
   - component: {fileID: 665769392}
   - component: {fileID: 665769391}
   m_Layer: 5
-  m_Name: PillarButtonLocked
+  m_Name: SelectPillarLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1589,7 +1728,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectPillarLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1650,7 +1789,7 @@ GameObject:
   - component: {fileID: 685569911}
   - component: {fileID: 685569910}
   m_Layer: 5
-  m_Name: HexagonButtonLocked
+  m_Name: SelectHexagonLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1722,7 +1861,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectHexagonLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1783,7 +1922,7 @@ GameObject:
   - component: {fileID: 913238122}
   - component: {fileID: 913238121}
   m_Layer: 5
-  m_Name: RedSquareButton
+  m_Name: SelectRedSquare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1855,7 +1994,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectRedSquare
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2122,7 +2261,7 @@ GameObject:
   - component: {fileID: 1125709322}
   - component: {fileID: 1125709321}
   m_Layer: 5
-  m_Name: PillarButton
+  m_Name: SelectPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2194,7 +2333,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectPillar
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2255,7 +2394,7 @@ GameObject:
   - component: {fileID: 1130986489}
   - component: {fileID: 1130986488}
   m_Layer: 5
-  m_Name: HexagonButton
+  m_Name: SelectHexagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2327,7 +2466,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectHexagon
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2476,6 +2615,141 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1166244651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1166244652}
+  - component: {fileID: 1166244654}
+  - component: {fileID: 1166244653}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1166244652
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166244651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1457142625}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1166244653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166244651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Load Level
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1166244654
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166244651}
+  m_CullTransparentMesh: 1
 --- !u!1 &1171810292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,7 +2763,7 @@ GameObject:
   - component: {fileID: 1171810295}
   - component: {fileID: 1171810294}
   m_Layer: 5
-  m_Name: SpikeBallButtonLocked
+  m_Name: SelectSpikeBallLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2561,7 +2835,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectSpikeBallLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2622,7 +2896,7 @@ GameObject:
   - component: {fileID: 1311043818}
   - component: {fileID: 1311043817}
   m_Layer: 5
-  m_Name: CrossButtonLocked
+  m_Name: SelectCrossLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2694,7 +2968,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectCrossLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2755,7 +3029,7 @@ GameObject:
   - component: {fileID: 1315219281}
   - component: {fileID: 1315219280}
   m_Layer: 5
-  m_Name: StarButton
+  m_Name: SelectStar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2827,7 +3101,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectStar
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2973,7 +3247,7 @@ GameObject:
   - component: {fileID: 1367469569}
   - component: {fileID: 1367469568}
   m_Layer: 5
-  m_Name: TriangleUpButton
+  m_Name: SelectTriangleUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3045,7 +3319,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectTriangleUp
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3093,6 +3367,128 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367469566}
   m_CullTransparentMesh: 1
+--- !u!1 &1457142624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1457142625}
+  - component: {fileID: 1457142628}
+  - component: {fileID: 1457142627}
+  - component: {fileID: 1457142626}
+  m_Layer: 5
+  m_Name: Load
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1457142625
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457142624}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1166244652}
+  m_Father: {fileID: 329983350}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -200, y: 50}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1457142626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457142624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1457142627}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1457142627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457142624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1457142628
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457142624}
+  m_CullTransparentMesh: 1
 --- !u!1 &1505725428
 GameObject:
   m_ObjectHideFlags: 0
@@ -3106,7 +3502,7 @@ GameObject:
   - component: {fileID: 1505725431}
   - component: {fileID: 1505725430}
   m_Layer: 5
-  m_Name: TriangleUpLocked
+  m_Name: SelectTriangleUpLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3178,7 +3574,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectTriangleUpLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3799,7 +4195,7 @@ GameObject:
   - component: {fileID: 1798128653}
   - component: {fileID: 1798128652}
   m_Layer: 5
-  m_Name: EmptyButtonLocked
+  m_Name: SelectEmptySquareLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3814,7 +4210,7 @@ RectTransform:
   m_GameObject: {fileID: 1798128650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1024612781}
@@ -3822,7 +4218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50.00003, y: -150}
+  m_AnchoredPosition: {x: 50.00003, y: -149.99994}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1798128652
@@ -3871,7 +4267,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectEmptyLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3932,7 +4328,7 @@ GameObject:
   - component: {fileID: 1816608009}
   - component: {fileID: 1816608008}
   m_Layer: 5
-  m_Name: SpikeBallButton
+  m_Name: SelectSpikeBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4004,7 +4400,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectSpikeBall
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4065,7 +4461,7 @@ GameObject:
   - component: {fileID: 1951060347}
   - component: {fileID: 1951060346}
   m_Layer: 5
-  m_Name: QuestionMarkButtonLocked
+  m_Name: SelectQuestionMarkLocked
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4137,7 +4533,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 496354682}
         m_TargetAssemblyTypeName: SelectionHandler, Assembly-CSharp
-        m_MethodName: SelectQuestionMarkLocked
+        m_MethodName: SelectSquare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4184,4 +4580,126 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951060344}
+  m_CullTransparentMesh: 1
+--- !u!1 &2128549117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2128549118}
+  - component: {fileID: 2128549121}
+  - component: {fileID: 2128549120}
+  - component: {fileID: 2128549119}
+  m_Layer: 5
+  m_Name: Save
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2128549118
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128549117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4014808}
+  m_Father: {fileID: 329983350}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 200, y: 50}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2128549119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128549117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2128549120}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2128549120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128549117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2128549121
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2128549117}
   m_CullTransparentMesh: 1
