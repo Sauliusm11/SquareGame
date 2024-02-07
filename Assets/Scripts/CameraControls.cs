@@ -41,7 +41,7 @@ public class CameraControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+ 
         if (manager.GetSelectedSquare() == GameManager.Selected.Camera)
         {
             if (Input.touchSupported)
@@ -50,10 +50,6 @@ public class CameraControls : MonoBehaviour
             }
             else
             {
-                //if (!EventSystem.current.IsPointerOverGameObject())//Causes a lot of lag on pc
-                //{
-                //    HandleMouse();
-                //}
                 HandleMouse();
             }
         }

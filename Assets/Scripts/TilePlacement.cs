@@ -47,7 +47,6 @@ public class TilePlacement : MonoBehaviour, IDragHandler, IPointerClickHandler
         for (int index = 0; index < raycastResults.Count; index++)
         {
             RaycastResult curRaysastResult = raycastResults[index];
-            Debug.Log(curRaysastResult.gameObject.layer);
             if (curRaysastResult.gameObject.layer == 5)//5 is UI value
             {
                 return true;
