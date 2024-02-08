@@ -9,6 +9,8 @@ public class RuleHandler : MonoBehaviour
     SelectionHandler selectionHandler;
     List<Tile> Tiles;
     List<AbstractTileRule> rules = new List<AbstractTileRule>();
+    //For reseting the already checked bool
+    HexagonRules hexagonRules;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,8 @@ public class RuleHandler : MonoBehaviour
         }
         rules.Add(new RedSquareRules(Tiles[1]));
         rules.Add(new TriangleUpRules(Tiles[2]));
-        rules.Add(new HexagonRules(Tiles[3]));
+        hexagonRules= new HexagonRules(Tiles[3]);
+        rules.Add(hexagonRules);
         rules.Add(new SimpleDotRules(Tiles[4]));
         rules.Add(new PillarRules(Tiles[5]));
         rules.Add(new StarRules(Tiles[6]));
@@ -38,6 +41,7 @@ public class RuleHandler : MonoBehaviour
     }
     public void CheckRules()
     {
+        hexagonRules.Reset();
         tilemap.CompressBounds();
         BoundsInt bounds = tilemap.cellBounds;
         TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
@@ -50,14 +54,18 @@ public class RuleHandler : MonoBehaviour
                 {
                     foreach (AbstractTileRule rule in rules)
                     {
-                        if(tile.name.Contains(rule.Tile.name))
+                        if (tile.name.Contains(rule.Tile.name))
                         {
-                            Debug.Log(rule.ProcessRule(new Vector2Int(x, y), allTiles, new Vector2Int(bounds.size.x, bounds.size.y)));
+                            if (!rule.ProcessRule(new Vector2Int(x, y), allTiles, new Vector2Int(bounds.size.x, bounds.size.y)))
+                            {
+                                Debug.Log(false);
+
+                            }
                         }
                     }
-                    //Make a class that holds tile type and rule class?
                 }
             }
         }
+        Debug.Log(true);
     }
 }
