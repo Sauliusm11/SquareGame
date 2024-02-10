@@ -39,7 +39,11 @@ public class RuleHandler : MonoBehaviour
     {
         
     }
-    public void CheckRules()
+    public void InitiateRuleCheck()
+    {
+        Debug.Log(CheckRules());
+    }
+    private bool CheckRules()
     {
         hexagonRules.Reset();
         tilemap.CompressBounds();
@@ -58,7 +62,7 @@ public class RuleHandler : MonoBehaviour
                         {
                             if (!rule.ProcessRule(new Vector2Int(x, y), allTiles, new Vector2Int(bounds.size.x, bounds.size.y)))
                             {
-                                Debug.Log(false);
+                                return false;
 
                             }
                         }
@@ -66,6 +70,7 @@ public class RuleHandler : MonoBehaviour
                 }
             }
         }
-        Debug.Log(true);
+        return true;
     }
+
 }

@@ -13,6 +13,7 @@ public abstract class AbstractTileRule
     {
         return Tile;
     }
+    
     //public Tile GetLockedTile()
     //{
     //    return lockedTile;
