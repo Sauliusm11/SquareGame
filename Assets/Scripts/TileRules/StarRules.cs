@@ -7,7 +7,7 @@ internal class StarRules : AbstractTileRule
     {
         Tile = tile;
     }
-    protected bool CheckLocation(int x, int y, TileBase[] tiles, int xSize, int ySize)
+    bool CheckLocation(int x, int y, TileBase[] tiles, int xSize, int ySize)
     {
         if (tiles[x + y * xSize] != null)
         {
