@@ -21,9 +21,10 @@ class HexagonRules : AbstractTileRule
     }
     bool CheckLocation(int x, int y, TileBase[] tiles, int xSize, int ySize, int[] visited)
     {
-        if (tiles[x + y * xSize] != null)
+        TileBase tile = tiles[x + y * xSize];
+        if (tile != null)
         {
-            if (visited[x + y * xSize] != 1 && tiles[x + y * xSize].name.Contains(Tile.name))
+            if (visited[x + y * xSize] != 1 && (tile.name.Contains(Tile.name) || tile.name.Contains("Question")))
                 return true;
         }
         return false;
@@ -90,7 +91,8 @@ class HexagonRules : AbstractTileRule
         for ( x = 0; x < xSize; x++)
         {
             for ( y = 0; y < ySize; y++)
-            { TileBase tile = tiles[x + y * xSize];
+            {
+                TileBase tile = tiles[x + y * xSize];
                 if (tile != null)
                 {
                     if (tile.name.Contains(Tile.name))
