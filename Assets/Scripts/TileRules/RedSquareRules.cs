@@ -10,30 +10,45 @@ public class RedSquareRules : AbstractTileRule
     {
         Tile = tile;
     }
+    bool CheckLocation(int x, int y, TileBase[] tiles, int xSize, int ySize)
+    {
+        TileBase tile = tiles[x + y * xSize];
+        if (tile != null)
+        {
+            if (tile.name.Contains(Tile.name) || tile.name.Contains("Question"))
+                return true;
+        }
+        return false;
+    }
     public override bool ProcessRule(Vector2Int location, TileBase[] tiles, Vector2Int bounds)
     {
         int x = location.x;
+        int currentX = location.x;
         int y = location.y;
+        int currentY = location.y;
         int xSize = bounds.x;
         int ySize = bounds.y;
-        if(x > 0 && tiles[x - 1 + y * xSize] != null)
+        if (currentY > 0)
         {
-            if(tiles[x - 1 + y * xSize].name.Contains(Tile.name))
+            y = currentY - 1;
+            x = currentX;
+            if (CheckLocation(x, y, tiles, xSize, ySize))
                 return true;
         }
-        if (x < xSize-1 && tiles[x + 1 + y * xSize] != null)
+
+        y = currentY;
+        x = currentX + 1;
+        if (x < xSize && CheckLocation(x, y, tiles, xSize, ySize))
+            return true;
+        x = currentX - 1;
+        if (x > -1 && CheckLocation(x, y, tiles, xSize, ySize))
+            return true;
+
+        y = currentY + 1;
+        if (y < ySize)
         {
-            if(tiles[x + 1 + y * xSize].name.Contains(Tile.name))
-                return true;
-        }
-        if (y > 0 && tiles[x + (y - 1) * xSize] != null)
-        {
-            if(tiles[x + (y - 1) * xSize].name.Contains(Tile.name))
-                return true;
-        }
-        if (y < ySize-1 && tiles[x + (y + 1) * xSize] != null)
-        {
-            if (tiles[x + (y + 1) * xSize].name.Contains(Tile.name))
+            x = currentX;
+            if (CheckLocation(x, y, tiles, xSize, ySize))
                 return true;
         }
         return false;
