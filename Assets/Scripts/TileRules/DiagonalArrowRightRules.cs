@@ -10,9 +10,10 @@ internal class DiagonalArrowRules : AbstractTileRule
 
     bool CheckLocation(int x, int y, TileBase[] tiles, int xSize, int ySize)
     {
-        if (tiles[x + y * xSize] != null)
+        TileBase tile = tiles[x + y * xSize];
+        if (tile != null)
         {
-            if (tiles[x + y * xSize].name.Contains("Empty"))
+            if (tile.name.Contains("Empty") || tile.name.Contains("Question"))
                 return true;
             else
                 return false;
@@ -33,7 +34,6 @@ internal class DiagonalArrowRules : AbstractTileRule
             y += 1;
             if(!CheckLocation(x,y,tiles,xSize,ySize))
             {
-                Debug.Log(tiles[x + y * xSize]);
                 return false;
             }
         }
@@ -45,7 +45,6 @@ internal class DiagonalArrowRules : AbstractTileRule
             y -= 1;
             if(!CheckLocation(x,y,tiles,xSize,ySize))
             {
-                Debug.Log(tiles[x + y * xSize]);
                 return false;
             }
         }
