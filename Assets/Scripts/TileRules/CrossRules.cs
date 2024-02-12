@@ -7,17 +7,20 @@ internal class CrossRules : AbstractTileRule
     {
         Tile = tile;
     }
-    bool CheckLocation(int x, int y, TileBase[] tiles, int xSize, int ySize)
+    int CheckLocation(int x, int y, TileBase[] tiles, int xSize, int ySize)
     {
-        if (tiles[x + y * xSize] != null)
+        TileBase tile = tiles[x + y * xSize];
+        if (tile != null)
         {
-            if (tiles[x + y * xSize].name.Contains("Empty"))
-                return false;
+            if (tile.name.Contains("Question"))
+                return -1;
+            if (tile.name.Contains("Empty"))
+                return 0;
             else
-                return true;
+                return 1;
         }
         //Change this to true to allow placing at the edges
-        return false;
+        return 0;
     }
     public override bool ProcessRule(Vector2Int location, TileBase[] tiles, Vector2Int bounds)
     {
@@ -27,66 +30,65 @@ internal class CrossRules : AbstractTileRule
         int currentY = location.y;
         int xSize = bounds.x;
         int ySize = bounds.y;
-        bool empty = true;
+        int[] state = new int[4];
+        int emptyCount = 0;
+        int fullCount = 0;
         if (currentY > 0)
         {
             y = currentY - 1;
-            if (CheckLocation(x, y, tiles, xSize, ySize))
-                empty = false;
+            state[0] = CheckLocation(x, y, tiles, xSize, ySize);
+
         }
-        
 
         y = currentY;
         x = currentX + 1;
-        if (x < xSize && CheckLocation(x, y, tiles, xSize, ySize))
+        if (x < xSize)
         {
-            if (empty)
-            {
-                return false;
-            }
+            state[1] = CheckLocation(x, y, tiles, xSize, ySize);
         }
         else
         {
-            if(!empty)
-            {
-                return false;
-            }
+            state[1] = 0;
         }   
+
         x = currentX - 1;
-        if (x > -1 && CheckLocation(x, y, tiles, xSize, ySize))
+        if (x > -1)
         {
-            if (empty)
-            {
-                return false;
-            }
+            state[2] = CheckLocation(x, y, tiles, xSize, ySize);
         }
         else
         {
-            if (!empty)
-            {
-                return false;
-            }
+            state[2] = 0;
         }
 
         y = currentY + 1;
         if (y < ySize)
         {
             x = currentX;
-            if (CheckLocation(x, y, tiles, xSize, ySize))
+            state[3] = CheckLocation(x, y, tiles, xSize, ySize);
+        }
+        else
+        {
+            state[3] = 0;
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            if(state[i] == 1)
             {
-                if (empty)
-                {
-                    return false;
-                }
+                fullCount++;
             }
-            else
+            if(state[i] == 0)
             {
-                if (!empty)
-                {
-                    return false;
-                }
+                emptyCount++;
             }
         }
-        return true;
+        if(emptyCount != 0 && fullCount != 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }

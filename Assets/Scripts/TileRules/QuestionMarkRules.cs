@@ -10,6 +10,6 @@ internal class QuestionMarkRules : AbstractTileRule
 
     public override bool ProcessRule(Vector2Int location, TileBase[] tiles, Vector2Int bounds)
     {
-        throw new System.NotImplementedException();
+        return true;
     }
 }
