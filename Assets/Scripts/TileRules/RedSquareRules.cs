@@ -28,12 +28,12 @@ public class RedSquareRules : AbstractTileRule
         }
         if (y > 0 && tiles[x + (y - 1) * xSize] != null)
         {
-            if(tiles[x + y - 1 * xSize].name.Contains(Tile.name))
+            if(tiles[x + (y - 1) * xSize].name.Contains(Tile.name))
                 return true;
         }
         if (y < ySize-1 && tiles[x + (y + 1) * xSize] != null)
         {
-            if (tiles[x + y + 1 * xSize].name.Contains(Tile.name))
+            if (tiles[x + (y + 1) * xSize].name.Contains(Tile.name))
                 return true;
         }
         return false;
