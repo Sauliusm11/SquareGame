@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-
+using TMPro;
 public class RuleHandler : MonoBehaviour
 {
+
+    public TextMeshProUGUI text;
+    int counter = 0;
     Tilemap tilemap;
     SelectionHandler selectionHandler;
     List<Tile> Tiles;
@@ -43,7 +46,9 @@ public class RuleHandler : MonoBehaviour
     }
     public void InitiateRuleCheck()
     {
-        Debug.Log(CheckRules());
+        //Debug.Log(CheckRules());
+        counter++;
+        text.text = CheckRules().ToString()+" "+counter;
     }
     private bool CheckRules()
     {
