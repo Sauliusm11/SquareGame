@@ -11,6 +11,7 @@ public class RuleHandler : MonoBehaviour
     List<AbstractTileRule> rules = new List<AbstractTileRule>();
     //For reseting the already checked bool
     HexagonRules hexagonRules;
+    SpikeBallRules spikeRules;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,14 +24,15 @@ public class RuleHandler : MonoBehaviour
         }
         rules.Add(new RedSquareRules(Tiles[1]));
         rules.Add(new TriangleUpRules(Tiles[2]));
-        hexagonRules= new HexagonRules(Tiles[3]);
+        hexagonRules = new HexagonRules(Tiles[3]);
         rules.Add(hexagonRules);
         rules.Add(new SimpleDotRules(Tiles[4]));
         rules.Add(new PillarRules(Tiles[5]));
         rules.Add(new StarRules(Tiles[6]));
         rules.Add(new DiagonalArrowRules(Tiles[7]));
         rules.Add(new CrossRules(Tiles[8]));
-        rules.Add(new SpikeBallRules(Tiles[9]));
+        spikeRules = new SpikeBallRules(Tiles[9]);
+        rules.Add(spikeRules);
         rules.Add(new QuestionMarkRules(Tiles[10]));
     }
 
