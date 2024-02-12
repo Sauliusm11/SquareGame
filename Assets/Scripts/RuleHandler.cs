@@ -53,6 +53,7 @@ public class RuleHandler : MonoBehaviour
     private bool CheckRules()
     {
         hexagonRules.Reset();
+        spikeRules.Reset();
         tilemap.CompressBounds();
         BoundsInt bounds = tilemap.cellBounds;
         TileBase[] allTiles = tilemap.GetTilesBlock(bounds);
