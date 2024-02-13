@@ -13,6 +13,11 @@ public class LevelHandler : MonoBehaviour
         public List<int> y = new List<int>();
         public List<string> Name = new List<string>();
     }
+    class SavedNumbers
+    {
+        public List<int> num = new List<int>();
+        public List<string> Name = new List<string>();
+    }
     Tilemap tilemap;
     SelectionHandler selectionHandler;
     List<Tile> Tiles;
@@ -21,9 +26,15 @@ public class LevelHandler : MonoBehaviour
     [SerializeField]
     GameObject saveLevelName;
     [SerializeField]
+    GameObject tileNumberTable;
+    [SerializeField]
     TMP_InputField loadInput;
     [SerializeField]
     TMP_InputField saveInput;
+    [SerializeField]
+    List<TMP_InputField> numberInputs;
+
+    private SavedNumbers savedNumbers;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +43,7 @@ public class LevelHandler : MonoBehaviour
         saveLevelName.SetActive(false);
         tilemap = GameObject.Find("Grid").GetComponentInChildren<Tilemap>();
         selectionHandler = GameObject.Find("SelectionManager").GetComponent<SelectionHandler>();
+        savedNumbers = new SavedNumbers();
     }
 
     // Update is called once per frame
@@ -107,14 +119,36 @@ public class LevelHandler : MonoBehaviour
                 }
             }
         }
+
         string jsonData = JsonUtility.ToJson(savedTiles);
         string filename = saveInput.text + ".json";
+        string jsonlevelData = JsonUtility.ToJson(savedNumbers);
+        string fileLevelDataname = saveInput.text + " data" + ".json";
         saveLevelName.SetActive(false);
         File.WriteAllText(Application.dataPath + "/Levels/" + filename, jsonData);
+        File.WriteAllText(Application.dataPath + "/Levels/LevelData/" + fileLevelDataname, jsonlevelData);
     }
     public void StartSave()
     {
+        savedNumbers.num.Clear();
+        savedNumbers.Name.Clear();
+        foreach (TMP_InputField field in numberInputs)
+        {
+            int count = 0;
+            if(!int.TryParse(field.text, out count))
+            {
+                count = 0;
+            }
+            savedNumbers.num.Add(count);
+            savedNumbers.Name.Add(field.name.Substring(10));
+
+        }
+        CancelSetNumbers();
         saveLevelName.SetActive(true);
+    }
+    public void StartSetNumbers()
+    {
+        tileNumberTable.SetActive(true);
     }
     public void StartLoad()
     {
@@ -124,10 +158,14 @@ public class LevelHandler : MonoBehaviour
     //These are not used outside of buttons because of unclear naming scheme
     public void CancelSave()
     {
-        saveLevelName.SetActive(true);
+        saveLevelName.SetActive(false);
     }
     public void CancelLoad()
     {
-        loadLevelName.SetActive(true);
+        loadLevelName.SetActive(false);
+    }
+    public void CancelSetNumbers()
+    {
+        tileNumberTable.SetActive(false);
     }
 }
