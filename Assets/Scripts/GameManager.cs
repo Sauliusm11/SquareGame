@@ -13,10 +13,27 @@ public class GameManager : MonoBehaviour
     };
     private static Selected selectedSquare;
 
+    // Game states
+    public enum State { LevelSelect, LevelCompleted, Settings, InGame }
+    State state;
+
+    // Objects for state control
+    public GameObject LevelSelector;
+    public GameObject LevelSelect1;
+    //public GameObject LevelCompleted;
+    //public GameObject NextLevelButton;
+    public GameObject Level;
+    //public GameObject SquareSelection1;
+    //public GameObject SquareSelection2;
+    //public GameObject MainMenu;
+    //public GameObject RestartLevelButton;
+    //public GameObject HintButton;
+    //public GameObject SettingsCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        SwitchState(State.LevelSelect);
     }
 
     // Update is called once per frame
@@ -32,5 +49,91 @@ public class GameManager : MonoBehaviour
     public Selected GetSelectedSquare()
     {
         return selectedSquare;
+    }
+
+    public void SwitchState(State newState)
+    {
+        EndState();
+        BeginState(newState);
+    }
+    void BeginState(State newState)
+    {
+        switch (newState)
+        {
+            case State.LevelSelect:
+                LevelSelector.SetActive(true);
+                LevelSelect1.SetActive(true);
+                //SquareSelection1.SetActive(false);
+                //SquareSelection2.SetActive(false);
+                state = State.LevelSelect;
+                //RestartLevelButton.SetActive(false);
+                //LevelCounter.SetActive(false);
+                //IsCurrentStatePlaying = false;
+                break;
+            //case State.LevelCompleted:
+            //    SquareSelection1.SetActive(true);
+            //    if (LevelCount > CurrentLevel)
+            //    {
+            //        NextLevelButton.SetActive(true);
+            //        LevelCompleted.SetActive(true);
+            //        state = State.LevelCompleted;
+
+            //    }
+            //    else
+            //    {
+            //        NextLevelButton.SetActive(false);
+            //        LevelCompleted.SetActive(true);
+            //        state = State.LevelCompleted;
+            //    }
+            //    IsCurrentStatePlaying = false;
+            //    break;
+            //case State.Settings:
+            //    state = State.Settings;
+            //    SquareSelection1.SetActive(false);
+            //    SquareSelection2.SetActive(false);
+            //    MainMenu.SetActive(true);
+            //    SettingsCanvas.SetActive(true);
+            //    RestartLevelButton.SetActive(false);
+            //    LevelCounter.SetActive(false);
+            //    IsCurrentStatePlaying = false;
+            //    break;
+            case State.InGame:
+                Level.SetActive(true);
+                //SquareSelection1.SetActive(true);
+                state = State.InGame;
+                //RestartLevelButton.SetActive(true);
+                //LevelCounterText.text = CurrentLevel.ToString();
+                //LevelCounter.SetActive(true);
+                //IsCurrentStatePlaying = true;
+                //HintButton.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void EndState()
+    {
+        switch (state)
+        {
+            case State.LevelSelect:
+                LevelSelector.SetActive(false);
+                LevelSelect1.SetActive(false);
+                break;
+            //case State.LevelCompleted:
+            //    LevelCompleted.SetActive(false);
+            //    break;
+            //case State.Settings:
+            //    MainMenu.SetActive(true);
+            //    SettingsCanvas.SetActive(false);
+            //    break;
+            case State.InGame:
+                //ClearHints();
+                Level.SetActive(false);
+                //HintButton.SetActive(false);
+                break;
+            default:
+                break;
+        }
     }
 }

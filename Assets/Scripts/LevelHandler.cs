@@ -56,13 +56,18 @@ public class LevelHandler : MonoBehaviour
     {
         string filename = loadInput.text+".json";
         loadLevelName.SetActive(false);
+        PopulateBoard(filename);
+    }
+    private void PopulateBoard(string filename)
+    {
+        //TODO when switching to prod make it Application.persistentDataPath
         string jsonData = File.ReadAllText(Application.dataPath + "/Levels/" + filename);
         SavedTiles savedTiles = JsonUtility.FromJson<SavedTiles>(jsonData);
 
         //Load tile list
         if (Tiles == null)
         {
-           Tiles = selectionHandler.GetTileList();
+            Tiles = selectionHandler.GetTileList();
         }
 
         //Clear out current level
@@ -75,7 +80,7 @@ public class LevelHandler : MonoBehaviour
                 tilemap.SetTile(new Vector3Int(x + bounds.position.x, y + bounds.position.y), null);
             }
         }
-        
+
         //Loading the level
         for (int i = 0; i < savedTiles.x.Count; i++)
         {
@@ -88,7 +93,7 @@ public class LevelHandler : MonoBehaviour
                     {
                         tilemap.SetTile(new Vector3Int(savedTiles.x[i], savedTiles.y[i]), tile);
                     }
-                }  
+                }
             }
             else
             {
@@ -123,10 +128,9 @@ public class LevelHandler : MonoBehaviour
         string jsonData = JsonUtility.ToJson(savedTiles);
         string filename = saveInput.text + ".json";
         string jsonlevelData = JsonUtility.ToJson(savedNumbers);
-        string fileLevelDataname = saveInput.text + " data" + ".json";
         saveLevelName.SetActive(false);
         File.WriteAllText(Application.dataPath + "/Levels/" + filename, jsonData);
-        File.WriteAllText(Application.dataPath + "/Levels/LevelData/" + fileLevelDataname, jsonlevelData);
+        File.WriteAllText(Application.dataPath + "/Levels/LevelData/" + filename, jsonlevelData);
     }
     public void StartSave()
     {
@@ -167,5 +171,14 @@ public class LevelHandler : MonoBehaviour
     public void CancelSetNumbers()
     {
         tileNumberTable.SetActive(false);
+    }
+
+    public void LoadLevel(int number)
+    {
+        string filename = "Level" + number + ".json";
+        PopulateBoard(filename);
+        string jsonData = File.ReadAllText(Application.dataPath + "/Levels/LevelData/" + filename);
+        Debug.Log(jsonData);
+        
     }
 }
