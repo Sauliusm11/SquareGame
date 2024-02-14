@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
     public enum State { LevelSelect, LevelCompleted, Settings, InGame }
     State state;
 
+    //Level counter at the top of the screen
+    public GameObject LevelCounter;
+    public TextMeshProUGUI LevelCounterText;
     // Objects for state control
     public GameObject LevelSelector;
     public GameObject LevelSelect1;
@@ -25,8 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject Level;
     public GameObject SquareSelection1;
     public GameObject SquareSelection2;
-    //public GameObject MainMenu;
-    //public GameObject RestartLevelButton;
+    public GameObject RestartLevelButton;
     //public GameObject HintButton;
     //public GameObject SettingsCanvas;
 
@@ -68,8 +71,8 @@ public class GameManager : MonoBehaviour
                 SquareSelection1.SetActive(false);
                 SquareSelection2.SetActive(false);
                 state = State.LevelSelect;
-                //RestartLevelButton.SetActive(false);
-                //LevelCounter.SetActive(false);
+                RestartLevelButton.SetActive(false);
+                LevelCounter.SetActive(false);
                 //IsCurrentStatePlaying = false;
                 break;
             case State.LevelCompleted:
@@ -99,9 +102,9 @@ public class GameManager : MonoBehaviour
                 Level.SetActive(true);
                 SquareSelection1.SetActive(true);
                 state = State.InGame;
-                //RestartLevelButton.SetActive(true);
-                //LevelCounterText.text = CurrentLevel.ToString();
-                //LevelCounter.SetActive(true);
+                RestartLevelButton.SetActive(true);
+                LevelCounterText.text = levelHandler.GetCurrentLevel().ToString();
+                LevelCounter.SetActive(true);
                 //IsCurrentStatePlaying = true;
                 //HintButton.SetActive(true);
                 break;
