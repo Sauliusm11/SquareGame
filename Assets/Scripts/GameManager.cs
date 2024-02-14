@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     //public GameObject LevelCompleted;
     //public GameObject NextLevelButton;
     public GameObject Level;
-    //public GameObject SquareSelection1;
-    //public GameObject SquareSelection2;
+    public GameObject SquareSelection1;
+    public GameObject SquareSelection2;
     //public GameObject MainMenu;
     //public GameObject RestartLevelButton;
     //public GameObject HintButton;
@@ -63,8 +63,8 @@ public class GameManager : MonoBehaviour
             case State.LevelSelect:
                 LevelSelector.SetActive(true);
                 LevelSelect1.SetActive(true);
-                //SquareSelection1.SetActive(false);
-                //SquareSelection2.SetActive(false);
+                SquareSelection1.SetActive(false);
+                SquareSelection2.SetActive(false);
                 state = State.LevelSelect;
                 //RestartLevelButton.SetActive(false);
                 //LevelCounter.SetActive(false);
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
             //    break;
             case State.InGame:
                 Level.SetActive(true);
-                //SquareSelection1.SetActive(true);
+                SquareSelection1.SetActive(true);
                 state = State.InGame;
                 //RestartLevelButton.SetActive(true);
                 //LevelCounterText.text = CurrentLevel.ToString();
@@ -136,4 +136,28 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
+    public void NextPage()
+    {
+        if (SquareSelection1.activeInHierarchy)
+        {
+            SquareSelection2.SetActive(true);
+            SquareSelection1.SetActive(false);
+        }
+        else
+        {
+            SquareSelection1.SetActive(true);
+            SquareSelection2.SetActive(false);
+        }
+    }
+
+    //Might be useful if page three exists
+    //public void PreviousPage()
+    //{
+    //    if (SquareSelection2.activeInHierarchy)
+    //    {
+    //        SquareSelection1.SetActive(true);
+    //        SquareSelection2.SetActive(false);
+    //    }
+    //}
 }
