@@ -20,6 +20,7 @@ public class LevelHandler : MonoBehaviour
     }
     Tilemap tilemap;
     SelectionHandler selectionHandler;
+    GameManager gameManager;
     List<Tile> Tiles;
     [SerializeField]
     GameObject loadLevelName;
@@ -35,6 +36,8 @@ public class LevelHandler : MonoBehaviour
     List<TMP_InputField> numberInputs;
 
     private SavedNumbers savedNumbers;
+    private int currentLevel;
+    private int totalLevels = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -43,18 +46,19 @@ public class LevelHandler : MonoBehaviour
         saveLevelName.SetActive(false);
         tilemap = GameObject.Find("Grid").GetComponentInChildren<Tilemap>();
         selectionHandler = GameObject.Find("SelectionManager").GetComponent<SelectionHandler>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         savedNumbers = new SavedNumbers();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void LoadTiles()
     {
-        string filename = loadInput.text+".json";
+        string filename = loadInput.text + ".json";
         loadLevelName.SetActive(false);
         PopulateBoard(filename);
     }
@@ -139,7 +143,7 @@ public class LevelHandler : MonoBehaviour
         foreach (TMP_InputField field in numberInputs)
         {
             int count = 0;
-            if(!int.TryParse(field.text, out count))
+            if (!int.TryParse(field.text, out count))
             {
                 count = 0;
             }
@@ -180,5 +184,15 @@ public class LevelHandler : MonoBehaviour
         string jsonData = File.ReadAllText(Application.dataPath + "/Levels/LevelData/" + filename);
         SavedNumbers savedNumbers = JsonUtility.FromJson<SavedNumbers>(jsonData);
         selectionHandler.LoadTileCounts(savedNumbers.Name, savedNumbers.num);
+        gameManager.SwitchState(GameManager.State.InGame);
+        currentLevel = number;
+    }
+    public void NextLevel()
+    {
+        LoadLevel(currentLevel + 1);
+    }
+    public bool NextLevelExists()
+    {
+        return currentLevel < totalLevels;
     }
 }

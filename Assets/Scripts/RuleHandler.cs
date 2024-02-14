@@ -10,6 +10,7 @@ public class RuleHandler : MonoBehaviour
     int counter = 0;
     Tilemap tilemap;
     SelectionHandler selectionHandler;
+    GameManager gameManager;
     List<Tile> Tiles;
     List<AbstractTileRule> rules = new List<AbstractTileRule>();
     //For reseting the already checked bool
@@ -20,6 +21,7 @@ public class RuleHandler : MonoBehaviour
     {
         tilemap = GameObject.Find("Grid").GetComponentInChildren<Tilemap>();
         selectionHandler = GameObject.Find("SelectionManager").GetComponent<SelectionHandler>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         //Load tile list
         if (Tiles == null)
         {
@@ -52,7 +54,10 @@ public class RuleHandler : MonoBehaviour
     }
     public void InitiateRuleCheck()
     {
-        Debug.Log(CheckRules(false));
+        if(CheckRules(false))
+        {
+            gameManager.SwitchState(GameManager.State.LevelCompleted);
+        }
     }
     private bool CheckRules(bool devMode)
     {

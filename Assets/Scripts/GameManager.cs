@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
     // Objects for state control
     public GameObject LevelSelector;
     public GameObject LevelSelect1;
-    //public GameObject LevelCompleted;
-    //public GameObject NextLevelButton;
+    public GameObject LevelCompleted;
+    public GameObject NextLevelButton;
     public GameObject Level;
     public GameObject SquareSelection1;
     public GameObject SquareSelection2;
@@ -30,10 +30,12 @@ public class GameManager : MonoBehaviour
     //public GameObject HintButton;
     //public GameObject SettingsCanvas;
 
+    LevelHandler levelHandler;
     // Start is called before the first frame update
     void Start()
     {
         SwitchState(State.LevelSelect);
+        levelHandler = GameObject.Find("LevelHandler").GetComponent<LevelHandler>();
     }
 
     // Update is called once per frame
@@ -70,23 +72,19 @@ public class GameManager : MonoBehaviour
                 //LevelCounter.SetActive(false);
                 //IsCurrentStatePlaying = false;
                 break;
-            //case State.LevelCompleted:
-            //    SquareSelection1.SetActive(true);
-            //    if (LevelCount > CurrentLevel)
-            //    {
-            //        NextLevelButton.SetActive(true);
-            //        LevelCompleted.SetActive(true);
-            //        state = State.LevelCompleted;
-
-            //    }
-            //    else
-            //    {
-            //        NextLevelButton.SetActive(false);
-            //        LevelCompleted.SetActive(true);
-            //        state = State.LevelCompleted;
-            //    }
-            //    IsCurrentStatePlaying = false;
-            //    break;
+            case State.LevelCompleted:
+                SquareSelection1.SetActive(true);
+                LevelCompleted.SetActive(true);
+                if (levelHandler.NextLevelExists())
+                {
+                    NextLevelButton.SetActive(true);
+                }
+                else
+                {
+                    NextLevelButton.SetActive(false);
+                }
+                state = State.LevelCompleted;
+                break;
             //case State.Settings:
             //    state = State.Settings;
             //    SquareSelection1.SetActive(false);
@@ -112,7 +110,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EndState()
+    void EndState()
     {
         switch (state)
         {
@@ -120,9 +118,9 @@ public class GameManager : MonoBehaviour
                 LevelSelector.SetActive(false);
                 LevelSelect1.SetActive(false);
                 break;
-            //case State.LevelCompleted:
-            //    LevelCompleted.SetActive(false);
-            //    break;
+            case State.LevelCompleted:
+                LevelCompleted.SetActive(false);
+                break;
             //case State.Settings:
             //    MainMenu.SetActive(true);
             //    SettingsCanvas.SetActive(false);
@@ -137,6 +135,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LevelSelect()
+    {
+        SwitchState(State.LevelSelect);
+    }
+    public void ViewSolution()
+    {
+        SwitchState(State.InGame);
+    }
     public void NextPage()
     {
         if (SquareSelection1.activeInHierarchy)
