@@ -11,7 +11,7 @@ public class TilePlacement : MonoBehaviour, IDragHandler, IPointerClickHandler
     GameManager manager;
     SelectionHandler selectionHandler;
     RuleHandler ruleHandler;
-    bool devMode = false;
+    bool devMode = true;
     // Start is called before the first frame update
     void Start()
     {
