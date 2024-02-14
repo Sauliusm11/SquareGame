@@ -44,14 +44,25 @@ public class RuleHandler : MonoBehaviour
     {
         
     }
-    public void InitiateRuleCheck()
+    public void InitiateDevRuleCheck()
     {
         //Debug.Log(CheckRules());
         counter++;
-        text.text = CheckRules().ToString()+" "+counter;
+        text.text = CheckRules(true).ToString()+" "+counter;
     }
-    private bool CheckRules()
+    public void InitiateRuleCheck()
     {
+        Debug.Log(CheckRules(false));
+    }
+    private bool CheckRules(bool devMode)
+    {
+        if (!devMode)
+        {
+            if (!selectionHandler.CheckTileCounters())
+            {
+                return false;
+            }
+        }
         hexagonRules.Reset();
         spikeRules.Reset();
         tilemap.CompressBounds();

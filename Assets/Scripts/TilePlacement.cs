@@ -10,12 +10,14 @@ public class TilePlacement : MonoBehaviour, IDragHandler, IPointerClickHandler
     Tilemap tilemap;
     GameManager manager;
     SelectionHandler selectionHandler;
+    RuleHandler ruleHandler;
     bool devMode = false;
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         selectionHandler = GameObject.Find("SelectionManager").GetComponent<SelectionHandler>();
+        ruleHandler = GameObject.Find("RuleHandler").GetComponent<RuleHandler>();
         tilemap = gameObject.GetComponentInChildren<Tilemap>();
     }
 
@@ -64,6 +66,7 @@ public class TilePlacement : MonoBehaviour, IDragHandler, IPointerClickHandler
 
                     selectionHandler.UpdateTileCount(selection, -1);
                     tilemap.SetTile(cellPosition, tile);
+                    ruleHandler.InitiateRuleCheck();
                 }
             }
         }

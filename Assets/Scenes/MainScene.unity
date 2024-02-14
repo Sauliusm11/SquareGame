@@ -3947,7 +3947,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1137544274}
         m_TargetAssemblyTypeName: RuleHandler, Assembly-CSharp
-        m_MethodName: InitiateRuleCheck
+        m_MethodName: InitiateDevRuleCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

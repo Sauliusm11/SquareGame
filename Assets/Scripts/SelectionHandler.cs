@@ -85,6 +85,22 @@ public class SelectionHandler : MonoBehaviour
             }
         }
     }
+    public bool CheckTileCounters()
+    {
+        int count = 0;
+        foreach (GameObject button in SelectorButtons)
+        {
+            TMP_Text tMP_Text = button.GetComponentInChildren<TMP_Text>();
+            string text = tMP_Text.text;
+            int.TryParse(text, out count);
+            if(count > 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void LoadTileCounts(List<string> Names, List<int> Numbers)
     {
         for (int i = 0; i < Names.Count; i++)
