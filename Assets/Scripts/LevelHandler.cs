@@ -187,6 +187,11 @@ public class LevelHandler : MonoBehaviour
         gameManager.SwitchState(GameManager.State.InGame);
         currentLevel = number;
     }
+
+    public void RestartLevel()
+    {
+        LoadLevel(currentLevel);
+    }
     public void NextLevel()
     {
         LoadLevel(currentLevel + 1);
