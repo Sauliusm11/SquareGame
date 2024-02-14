@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Tilemaps;
 using System;
 
@@ -11,6 +11,8 @@ public class SelectionHandler : MonoBehaviour
     GameManager manager;
     [SerializeField]
     List<Tile> Tiles;
+    [SerializeField]
+    List<GameObject> SelectorButtons;
 
     // Start is called before the first frame update
     void Start()
@@ -53,4 +55,63 @@ public class SelectionHandler : MonoBehaviour
     {
         return Tiles;
     }
+    public int GetTileCount(GameManager.Selected selection)
+    {
+        int count = 0;
+        if(selection.ToString().Contains("Empty"))
+        { return 1; }
+        foreach (GameObject button in SelectorButtons)
+        {
+            if (button.name.Contains(selection.ToString()))
+            {
+                string text = button.GetComponentInChildren<TMP_Text>().text;
+                int.TryParse(text, out count);
+                return count;
+            }
+        }
+        return count;
+    }
+    public void UpdateTileCount(GameManager.Selected selection, int change)
+    {
+        int count = 0;
+        foreach (GameObject button in SelectorButtons)
+        {
+            if (button.name.Contains(selection.ToString()))
+            {
+                TMP_Text tMP_Text = button.GetComponentInChildren<TMP_Text>();
+                string text = tMP_Text.text;
+                int.TryParse(text, out count);
+                tMP_Text.text = (count + change).ToString();
+            }
+        }
+    }
+    public void LoadTileCounts(List<string> Names, List<int> Numbers)
+    {
+        for (int i = 0; i < Names.Count; i++)
+        {
+            GameObject button = SelectorButtons[i];
+            SetTileCount(button, Numbers[i]);
+        }
+    }
+    private void SetTileCount(GameObject button, int count)
+    {
+        TMP_Text tMP_Text = button.GetComponentInChildren<TMP_Text>();
+        tMP_Text.text = count.ToString();
+    }
+    //public int GetSelectedTileCount()
+    //{
+    //    int count = 0;
+    //    GameManager.Selected selection = manager.GetSelectedSquare();
+    //    foreach (GameObject button in SelectorButtons)
+    //    {
+    //        if(button.name.Contains(selection.ToString()))
+    //        {
+    //            string text = button.GetComponentInChildren<TMP_Text>().text;
+    //            int.TryParse(text, out count);
+    //            return count;
+
+    //        }
+    //    }
+    //    return count;
+    //}
 }

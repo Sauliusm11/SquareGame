@@ -178,7 +178,7 @@ public class LevelHandler : MonoBehaviour
         string filename = "Level" + number + ".json";
         PopulateBoard(filename);
         string jsonData = File.ReadAllText(Application.dataPath + "/Levels/LevelData/" + filename);
-        Debug.Log(jsonData);
-        
+        SavedNumbers savedNumbers = JsonUtility.FromJson<SavedNumbers>(jsonData);
+        selectionHandler.LoadTileCounts(savedNumbers.Name, savedNumbers.num);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class TilePlacement : MonoBehaviour, IDragHandler, IPointerClickHandler
     Tilemap tilemap;
     GameManager manager;
     SelectionHandler selectionHandler;
+    bool devMode = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +36,36 @@ public class TilePlacement : MonoBehaviour, IDragHandler, IPointerClickHandler
         eventData.position = Input.mousePosition;
 
         if (!PointerOverUI(eventData))
-        { 
+        {
             Vector3Int cellPosition = tilemap.WorldToCell(position);
-            Tile tile = selectionHandler.GetTileFromSelection(manager.GetSelectedSquare());
-            tilemap.SetTile(cellPosition, tile);
+            GameManager.Selected selection = manager.GetSelectedSquare();
+            Tile tile = selectionHandler.GetTileFromSelection(selection);
+            TileBase oldTile = tilemap.GetTile(cellPosition);
+            if (oldTile != null && selectionHandler.GetTileCount(selection) > 0 || devMode)
+            {
+                if(devMode)
+                tilemap.SetTile(cellPosition, tile);
+                else
+                {
+                    if (oldTile.name.Contains("Locked"))
+                    {
+                        return;
+                    }
+                    GameManager.Selected oldTileType = GameManager.Selected.EmptySquare;
+                    foreach (GameManager.Selected selectionType in Enum.GetValues(typeof(GameManager.Selected)))
+                    {
+                        if (oldTile.name.Contains(selectionType.ToString()))
+                        {
+                            oldTileType = selectionType;
+                        }
+                    }
+                    if(oldTileType != GameManager.Selected.EmptySquare && oldTileType != GameManager.Selected.EmptySquareLocked)
+                    selectionHandler.UpdateTileCount(oldTileType, 1);
+
+                    selectionHandler.UpdateTileCount(selection, -1);
+                    tilemap.SetTile(cellPosition, tile);
+                }
+            }
         }
     }
     bool PointerOverUI(PointerEventData eventData)
