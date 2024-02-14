@@ -65,8 +65,9 @@ public class LevelHandler : MonoBehaviour
     private void PopulateBoard(string filename)
     {
         //TODO when switching to prod make it Application.persistentDataPath
-        string jsonData = File.ReadAllText(Application.dataPath + "/Levels/" + filename);
-        SavedTiles savedTiles = JsonUtility.FromJson<SavedTiles>(jsonData);
+        TextAsset file = Resources.Load("Levels/" + filename) as TextAsset;
+        //string jsonData = File.ReadAllText(file.ToString());
+        SavedTiles savedTiles = JsonUtility.FromJson<SavedTiles>(file.ToString());
 
         //Load tile list
         if (Tiles == null)
@@ -179,10 +180,11 @@ public class LevelHandler : MonoBehaviour
 
     public void LoadLevel(int number)
     {
-        string filename = "Level" + number + ".json";
+        string filename = "Level" + number;
         PopulateBoard(filename);
-        string jsonData = File.ReadAllText(Application.dataPath + "/Levels/LevelData/" + filename);
-        SavedNumbers savedNumbers = JsonUtility.FromJson<SavedNumbers>(jsonData);
+        TextAsset file = Resources.Load("Levels/LevelData/" + filename) as TextAsset;
+        //string jsonData = File.ReadAllText(Resources.Load("Levels/LevelData/" + filename).ToString());
+        SavedNumbers savedNumbers = JsonUtility.FromJson<SavedNumbers>(file.ToString());
         selectionHandler.LoadTileCounts(savedNumbers.Name, savedNumbers.num);
         gameManager.SwitchState(GameManager.State.InGame);
         currentLevel = number;
