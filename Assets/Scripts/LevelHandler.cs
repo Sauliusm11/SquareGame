@@ -37,7 +37,7 @@ public class LevelHandler : MonoBehaviour
 
     private SavedNumbers savedNumbers;
     private int currentLevel;
-    private int totalLevels = 1;
+    private int totalLevels = 10;
 
     // Start is called before the first frame update
     void Start()
