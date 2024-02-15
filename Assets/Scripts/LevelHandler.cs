@@ -199,8 +199,8 @@ public class LevelHandler : MonoBehaviour
         //string jsonData = File.ReadAllText(Resources.Load("Levels/LevelData/" + filename).ToString());
         SavedNumbers savedNumbers = JsonUtility.FromJson<SavedNumbers>(file.ToString());
         selectionHandler.LoadTileCounts(savedNumbers.Name, savedNumbers.num);
-        gameManager.SwitchState(GameManager.State.InGame);
         currentLevel = number;
+        gameManager.SwitchState(GameManager.State.InGame);
     }
     public int GetCurrentLevel()
     {
