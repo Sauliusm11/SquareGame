@@ -7,7 +7,7 @@ internal class PillarRules : AbstractTileRule
     {
         Tile = tile;
     }
-    bool CheckLocation(int x, int y, TileBase[] tiles, int xSize, int ySize)
+    bool CheckLocation(int x, int y, TileBase[] tiles, int xSize)
     {
         if (tiles[x + y * xSize] != null)
         {
@@ -26,7 +26,7 @@ internal class PillarRules : AbstractTileRule
         if (currentY > 0)
         {
             y = currentY - 1;
-            if (CheckLocation(x, y, tiles, xSize, ySize))
+            if (CheckLocation(x, y, tiles, xSize))
                 return true;
         }
         else
@@ -35,18 +35,22 @@ internal class PillarRules : AbstractTileRule
         }
 
         y = currentY;
+        if(currentX == 0 || currentX + 1 >= xSize)//xSize is size of array, +1 would be out of array
+        {
+            return true;
+        }
         x = currentX + 1;
-        if (x < xSize && CheckLocation(x, y, tiles, xSize, ySize))
+        if (x < xSize && CheckLocation(x, y, tiles, xSize))
             return true;
         x = currentX - 1;
-        if (x > -1 && CheckLocation(x, y, tiles, xSize, ySize))
+        if (x > -1 && CheckLocation(x, y, tiles, xSize))
             return true;
 
         y = currentY + 1;
         if (y < ySize)
         {
             x = currentX;
-            if (CheckLocation(x, y, tiles, xSize, ySize))
+            if (CheckLocation(x, y, tiles, xSize))
                 return true;
         }
         else
