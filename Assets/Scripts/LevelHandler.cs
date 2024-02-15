@@ -48,6 +48,18 @@ public class LevelHandler : MonoBehaviour
         selectionHandler = GameObject.Find("SelectionManager").GetComponent<SelectionHandler>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         savedNumbers = new SavedNumbers();
+        int temp = 1;
+        while (true)
+        {
+            GameObject button = GameObject.Find(string.Format("LevelButton ({0})", temp));
+            if (button == null || !button.activeInHierarchy)
+            {
+                totalLevels = temp+1;
+                break;
+            }
+            temp++;
+        }
+        Debug.Log(totalLevels);
     }
 
     // Update is called once per frame
