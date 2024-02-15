@@ -37,7 +37,7 @@ public class LevelHandler : MonoBehaviour
 
     private SavedNumbers savedNumbers;
     private int currentLevel;
-    private int totalLevels = 1;
+    private int totalLevels = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +48,19 @@ public class LevelHandler : MonoBehaviour
         selectionHandler = GameObject.Find("SelectionManager").GetComponent<SelectionHandler>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         savedNumbers = new SavedNumbers();
+        int temp = 0;
+        while (true)
+        {
+            temp++;
+            GameObject button = GameObject.Find(string.Format("LevelButton ({0})", temp));
+            if (button == null || !button.activeInHierarchy)
+            {
+                totalLevels = temp;
+                break;
+            }
+
+        }
+        Debug.Log(totalLevels);
     }
 
     // Update is called once per frame
@@ -181,11 +194,12 @@ public class LevelHandler : MonoBehaviour
     {
         string filename = "Level" + number + ".json";
         PopulateBoard(filename);
+
         string jsonData = File.ReadAllText(Application.dataPath + "/Levels/LevelData/" + filename);
         SavedNumbers savedNumbers = JsonUtility.FromJson<SavedNumbers>(jsonData);
         selectionHandler.LoadTileCounts(savedNumbers.Name, savedNumbers.num);
-        gameManager.SwitchState(GameManager.State.InGame);
         currentLevel = number;
+        gameManager.SwitchState(GameManager.State.InGame);
     }
     public int GetCurrentLevel()
     {

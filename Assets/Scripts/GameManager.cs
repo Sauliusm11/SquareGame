@@ -76,7 +76,6 @@ public class GameManager : MonoBehaviour
                 //IsCurrentStatePlaying = false;
                 break;
             case State.LevelCompleted:
-                SquareSelection1.SetActive(true);
                 LevelCompleted.SetActive(true);
                 if (levelHandler.NextLevelExists())
                 {
@@ -100,6 +99,7 @@ public class GameManager : MonoBehaviour
             //    break;
             case State.InGame:
                 Level.SetActive(true);
+                if(!SquareSelection2.activeInHierarchy)
                 SquareSelection1.SetActive(true);
                 state = State.InGame;
                 RestartLevelButton.SetActive(true);
